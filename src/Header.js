@@ -5,7 +5,7 @@ export default function Header(){
         {name: 'About', url:'/#About'},
         {name: 'Menu', url:'/#Menu'},
         {name: 'Reservation', url:'/#Reservation'},
-        {name: 'Order Online', url:'/#Order'},
+        {name: 'Order', url:'/#Order'},
         {name: 'Login', url:'/#Login'},
     ]
     return (

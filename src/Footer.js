@@ -9,11 +9,43 @@ export default function Footer(){
         {name: 'Login', url:'/#Login'},
     ]
     const contact = [
-        {name:'Address'}
+        {name:'Address'},
+        {name:'phone number'},
+        {name:'email'}
     ]
     return(
-        <div className='footer'>
+        <div className='footer' id ="grid">
             <img src = {logo} alt='logo'/>
+            <div>
+                <h3>Doormat Navigation</h3>
+                {nav.map(nav=>
+                    <div>
+                    <a href = {nav.url}>
+                        {nav.name}
+                    </a>
+                    </div>
+                    )}
+            </div>
+            <div>
+                <h3>Contact</h3>
+                {nav.map(nav=>
+                    <div>
+                    <a>
+                        {nav.name}
+                    </a>
+                    </div>
+                    )}
+            </div>
+            <div>
+                <h3>Social Media link</h3>
+                {nav.map(nav=>
+                    <div>
+                    <a>
+                        {nav.name}
+                    </a>
+                    </div>
+                    )}
+            </div>
         </div>
     )
 }

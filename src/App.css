@@ -1,17 +1,174 @@
+#grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 3vw;
+  margin-left: 14vw;
+  margin-right: 14vw;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CSS for header section*/
 .header{
-  display: flex;
-  margin-left: 5%;
-  margin-right: 5%;
+  display: grid;
+  grid-template-columns:1fr 3fr;
+  justify-items: center;
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
-.header nav{
-  display: flex;
-  
+.header img{
+  height: 5vw;
+  width: 16vw;
 }
+.header nav a{
+  text-decoration: none;
+  color: #495E57;
+}
+.header nav a:hover{
+  color:#F4CE14;
+}
+
 .header .header-nav{
-  padding: 10px;
+  font-size: 2vw;
+  padding: 1vw;
+
+}
+
+/* CSS for hero section*/
+.hero{
+  display: flex;
+  margin-left: 14vw;
+  margin-right: 14vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  justify-content: center;
+  align-items: center;
+
+}
+.hero img{
+  max-width: 100%;
+  height: auto;
+}
+.hero button{
+  width: 20vh;
+  height: 5vh;
+}
+
+/* CSS for highlight section*/
+.highlight{
+  margin-top: 8vh;
+  margin-bottom: 8vh;
+}
+
+.highlight_title{
+  display: flex;
+  margin-left: 14vw;
+  margin-right: 14vw;
+  margin-bottom: 4vh;
+}
+.highlight_title button{
+  width: 20vh;
+  height: 5vh;
+  justify-content:right;
+  align-items:flex-start;
+  margin-left: auto;
+}
+.special div{
+  background-color: #495E57;
+}
+@media screen and (min-width: 1280px){
+  .dish p{
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .dish p {
+    font-size: 1.5vh;
+  }
+}
+
+
+.dish img{
+  width:100%;
+  height:30%;
+}
+
+.dish_text{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.dish_name{
+  display: flex;
+}
+.dish_name :nth-child(2){
+  justify-content:right;
+  margin-left: auto;
+}
+
+.dish_des{
+  height: 13vh;
+}
+.dish_order{
+  height: 3vh;
+}
+
+
+
+
+/* CSS for testimonials section*/
+.testimonials{
+  margin-top: 16vh;
+  margin-bottom: 16vh;
+}
+.testimonials h3{
+  text-align: center;
+  margin-bottom: 8vh;
+}
+.testimonials :nth-child(2) div{
+  background-color: #495E57;
+  padding: 5%;
+}
+.rating div{
+  display: flex;
+  gap: 10px;
+}
+.rating img{
+  height: 50px;
+  width: 50px;
+}
+
+/* CSS for about*/
+.about{
+  margin-top: 16vh;
+  margin-bottom: 16vh;
+}
+.about_img1{
+  margin-top: 8vh;
+	margin-left: 18vw;
+  width: 200px; 
+  height: 200px; 
+}
+.about_img2{
+  width: 200px; 
+  height: 200px; 
+ 
+}
+
+/* CSS for footer section*/
+.footer{
+  margin-left: 14vw;
+  margin-right: 14vw;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
 }
 
 .footer img{
-  height: 20vh;
-  width: 10vh;
+  height: 14vw;
+  width: 7vw;
 }
+
