@@ -19,8 +19,8 @@ export default function Footer(){
             <div>
                 <h3>Doormat Navigation</h3>
                 {nav.map(nav=>
-                    <div>
-                    <a href = {nav.url}>
+                    <div >
+                    <a href = {nav.url} className='footer_link' key ={nav.name}>
                         {nav.name}
                     </a>
                     </div>
@@ -30,7 +30,7 @@ export default function Footer(){
                 <h3>Contact</h3>
                 {nav.map(nav=>
                     <div>
-                    <a>
+                    <a className='footer_link' key ={nav.name}>
                         {nav.name}
                     </a>
                     </div>
@@ -40,7 +40,7 @@ export default function Footer(){
                 <h3>Social Media link</h3>
                 {nav.map(nav=>
                     <div>
-                    <a>
+                    <a className='footer_link' key ={nav.name}>
                         {nav.name}
                     </a>
                     </div>

@@ -1,3 +1,6 @@
+.home{
+  background-color:#EDEFEE;
+}
 #grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -11,13 +14,13 @@
 /* CSS for header section*/
 .header{
   display: grid;
-  grid-template-columns:1fr 3fr;
+  grid-template-columns:1fr 5fr;
   justify-items: center;
   align-items: center;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-left: 14vw;
+  margin-right: 14vw;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
 }
 .header img{
   height: 5vw;
@@ -32,8 +35,9 @@
 }
 
 .header .header-nav{
-  font-size: 2vw;
-  padding: 1vw;
+  font-weight:700;
+  font-size: 1.6vw;
+  padding-left: 2vw;
 
 }
 
@@ -42,19 +46,35 @@
   display: flex;
   margin-left: 14vw;
   margin-right: 14vw;
-  margin-top: 2vh;
   margin-bottom: 2vh;
+  padding-top: 5vh;
   justify-content: center;
   align-items: center;
-
+  font-size:x-large;
+}
+.hero h1{
+  color:#F4CE14;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.hero h2{
+  color:#EE9972;
+  font-style: italic;
 }
 .hero img{
   max-width: 100%;
   height: auto;
+  border-radius:5%;
 }
 .hero button{
   width: 20vh;
   height: 5vh;
+  color: #495E57;
+  background-color:#F4CE14;
+  border-radius: 5px;
+}
+.hero button:hover{
+  background-color: #495E57;
+  color:#F4CE14;
 }
 
 /* CSS for highlight section*/
@@ -64,20 +84,35 @@
 }
 
 .highlight_title{
+  border-bottom: 1px solid #333333;
   display: flex;
   margin-left: 14vw;
   margin-right: 14vw;
   margin-bottom: 4vh;
+  font-size: x-large;
+  align-items:flex-start;
 }
 .highlight_title button{
   width: 20vh;
   height: 5vh;
+  margin-top: 4vh;
   justify-content:right;
-  align-items:flex-start;
+
   margin-left: auto;
+  color: #495E57;
+  background-color:#F4CE14;
+  border-radius: 5px;
 }
+
+.highlight_title button:hover{
+  background-color: #495E57;
+  color:#F4CE14;
+}
+
 .special div{
   background-color: #495E57;
+  border-radius:5%;
+  
 }
 @media screen and (min-width: 1280px){
   .dish p{
@@ -89,22 +124,28 @@
   .dish p {
     font-size: 1.5vh;
   }
-}
 
-
-.dish img{
+}.dish img{
   width:100%;
   height:30%;
+  border-radius:5%;
 }
 
 .dish_text{
   margin-left: 10%;
   margin-right: 10%;
+  
 }
 
 .dish_name{
   display: flex;
+  color:#F4CE14;
 }
+
+.dish_name :nth-child(2){
+  color:#EE9972;
+}
+
 .dish_name :nth-child(2){
   justify-content:right;
   margin-left: auto;
@@ -115,6 +156,11 @@
 }
 .dish_order{
   height: 3vh;
+  color:#EDEFEE;
+}
+.dish_order:hover{
+  height: 3vh;
+  color:#FBDABB;
 }
 
 
@@ -122,21 +168,39 @@
 
 /* CSS for testimonials section*/
 .testimonials{
+
   margin-top: 16vh;
   margin-bottom: 16vh;
+  padding-bottom: 5vh;
+
 }
 .testimonials h3{
+  margin-left: 14vw;
+  margin-right: 14vw;
+  border-bottom: 1px solid #333333;
   text-align: center;
   margin-bottom: 8vh;
+  font-size: x-large;
 }
 .testimonials :nth-child(2) div{
   background-color: #495E57;
   padding: 5%;
+  border-radius: 5%;
+  font-size: large;
+  color: #F4CE14;
 }
 .rating div{
   display: flex;
   gap: 10px;
 }
+.rating :nth-child(3){
+  color:#EDEFEE;
+}
+
+.rating :nth-child(3):hover{
+  color:#FBDABB;
+}
+
 .rating img{
   height: 50px;
   width: 50px;
@@ -144,18 +208,20 @@
 
 /* CSS for about*/
 .about{
-  margin-top: 16vh;
-  margin-bottom: 16vh;
+  padding-bottom: 16vh;
+  font-size: large;
 }
 .about_img1{
-  margin-top: 8vh;
-	margin-left: 18vw;
-  width: 200px; 
-  height: 200px; 
+  margin-top: 10vh;
+	margin-left: 15vw;
+  width: 250px; 
+  height: 300px;
+  border-radius:5%;
 }
 .about_img2{
-  width: 200px; 
-  height: 200px; 
+  width: 250px; 
+  height: 300px;
+  border-radius:5%;
  
 }
 
@@ -163,8 +229,18 @@
 .footer{
   margin-left: 14vw;
   margin-right: 14vw;
-  margin-top: 8vh;
-  margin-bottom: 8vh;
+  margin-top: 2vh;
+  padding-bottom: 3vh;
+  color: #495E57;
+}
+
+.footer_link{
+  text-decoration: none;
+  color: #495E57;
+}
+.footer_link:hover{
+  text-decoration: none;
+  color:#F4CE14;
 }
 
 .footer img{
