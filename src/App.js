@@ -21,18 +21,14 @@ function App() {
     {name: 'Order Online', url:'/Order'},
     {name: 'Login', url:'/Login'},
   ]
-  const contact = [
-      {name:'Address'},
-      {name:'phone number'},
-      {name:'email'}
-  ]
-  const [bookingInfo, setBookingInfo] = useState([
-        { date: "", time: "", guest:1, occassion:"" }
-      ]);
-
+  const [bookingInfo, setBookingInfo] = useState(
+        { date: "", time: "", guest:0, occassion:"Occassion"}
+      );
+  
   const updateTimes = (state, action) => {
       const date = new Date(action.date)
       state = fetchAPI(date)
+      setBookingInfo({...bookingInfo,time:state[0]})
       return state
   }
 
@@ -45,6 +41,10 @@ function App() {
       if (response == true){
         navigate("/BookingConfirmed")
       }
+  }
+
+  const reserveTable = function(){
+      navigate("/Reservation")
   }
   return (
     <>
@@ -68,8 +68,9 @@ function App() {
                 }
             </nav>
         </div>
+     
         <Routes>
-                <Route path = "/" element={<Home/>}></Route>
+                <Route path = "/" element={<Home reserveTable={reserveTable}/>}></Route>
                 <Route path = "/Reservation" element={<Reservation  bookingState = {[bookingInfo, setBookingInfo]} timesState = {[availableTimes, dispatch]} submitForm = {submitForm}/>}></Route>
                 <Route path = "/BookingConfirmed" element={<ConfirmedBooking bookingInfo = {bookingInfo}/>}></Route>
         </Routes>

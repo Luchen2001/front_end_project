@@ -248,3 +248,49 @@
   width: 7vw;
 }
 
+/* CSS for booking form*/
+.bookingForm{
+  padding: 5vh;
+  background-color:#EDEFEE;
+}
+form *{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  font-weight: bold;
+}
+.bookingForm button{
+  color: #495E57;
+  background-color:#F4CE14;
+  border-radius: 5px;
+
+}
+
+.bookingForm button:hover{
+  background-color: #495E57;
+  color:#F4CE14;
+  
+}
+.error{
+  padding: 0;
+  margin: 0;
+}
+.errorMsg{
+  font-size: small;
+  color: red;
+}
+/* CSS for booking confirm page*/
+.confirm{
+  padding: 5vh;
+}
+.confirm *{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirm h2{
+  padding: 2vh;
+}
+
+

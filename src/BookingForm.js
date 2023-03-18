@@ -1,14 +1,15 @@
-
+import { useState } from "react";
 export default function BookingFrom(props){
     const [bookingInfo, setBookingInfo] = props.bookingState
 
     const handleDate = e =>{
-        setBookingInfo({...bookingInfo,date:e.target.value})
-        dispatch({date:e.target.value})
+        setBookingInfo({...bookingInfo,date:e.target.value});
+        dispatch({date:e.target.value});
+
     }
     const handleTime = e =>{
         setBookingInfo({...bookingInfo,time:e.target.value})
-        
+
     }
     const handleGuest = e =>{
         setBookingInfo({...bookingInfo,guest:e.target.value})
@@ -18,18 +19,32 @@ export default function BookingFrom(props){
     }
 
     const [availableTimes, dispatch]= props.timesState
+
+    //validation
+    const [touch, setTouch] = useState(false); 
+
+    const getIsFormValid = () => { 
+        return ( 
+          bookingInfo.occassion !== "Occassion" &&
+          bookingInfo.date!==""&&
+          bookingInfo.time!==""&&
+          bookingInfo.guest>0
+        ); 
+      }; 
+
     
 
     return(
-        <div>
+        <div className="bookingForm">
             <form>
                 <div>
-                    <label for="res-date">Choose date</label>
-                    <input type="date" id="res-date" onChange={handleDate}></input>
+                    <label htmlFor="date">Choose date:</label>
+                    <input type="date" id="date" name="date" onChange={handleDate} ></input>
                 </div>
+
                 <div>
-                    <label for = "res-time">Choose time</label>
-                    <select id="res-time" onChange={handleTime} >
+                    <label for = "res-time">Choose time:</label>
+                    <select id="res-time" name="time" onChange={handleTime}>
                         {availableTimes.map(t=>
                         <option>
                             {t}
@@ -38,18 +53,26 @@ export default function BookingFrom(props){
                     </select>
                 </div>
                 <div>
-                    <label for="guests">Number of guests</label>
-                    <input type="number" placeholder="1" min="1" max="10" id="guests" onChange={handleGuest}></input>
+                    <label for="guests">Number of guests:</label>
+                    <input type="number" placeholder="1" min="1" max="10" id="guests" name="guests"  onChange={handleGuest} onBlur={()=>setTouch(true)}></input>
+                </div>
+                <div className="error">
+                    {touch&&bookingInfo.guest==0?<p className="errorMsg">please enter the number of people</p>:null}
+                </div>
+                <div className="error">
+                    {touch&&(bookingInfo.guest<0||bookingInfo.guest>=10)?<p className="errorMsg">only available for 0-10 seats</p>:null}
                 </div>
                 <div>
-                    <label for="occasion">Occasion</label>
+                    <label for="occasion">Occasion:</label>
                     <select id="occasion" onChange={handleOccassion}>
+                        <option>Occasion</option>
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </select>
                 </div>
-
-                <button type="submit" onClick={e=>{e.preventDefault();props.submitForm(bookingInfo)}}>Make Your reservation</button>
+                <div>
+                    <button type="submit" disabled={!getIsFormValid()} onClick={e=>{e.preventDefault();props.submitForm(bookingInfo)}}>Make Your reservation</button>
+                </div>
             </form>
         </div>
     )
